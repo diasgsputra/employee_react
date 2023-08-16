@@ -14,7 +14,7 @@ function EmployeeList() {
     });
   };
   const handleAddSuccess = () => {
-    fetchEmployees(); // Fetch employees after successfully adding a new employee
+    fetchEmployees(); 
   };
   useEffect(() => {
     axios.get('https://employeejava-production.up.railway.app/api/employees').then((response) => {
@@ -37,7 +37,7 @@ function EmployeeList() {
 
   const handleDelete = (id) => {
     axios.delete(`https://employeejava-production.up.railway.app/api/employees/${id}`).then(() => {
-      // After successful deletion, refresh the employee list
+      
       axios.get('https://employeejava-production.up.railway.app/api/employees').then((response) => {
         setEmployees(response.data);
       });
@@ -45,10 +45,10 @@ function EmployeeList() {
   };
 
   const handleUpdate = (id) => {
-    setUpdateId(id); // Set the employee ID being updated
+    setUpdateId(id); 
   };
   const handleUpdateSuccess = () => {
-    setUpdateId(null); // Clear the updateId to trigger a re-render of EmployeeList
+    setUpdateId(null);
     fetchEmployees();
   };
 

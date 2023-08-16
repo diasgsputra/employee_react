@@ -17,7 +17,7 @@ function EmployeeUpdate({ id, onUpdateSuccess }) {
   const handleUpdate = () => {
     const updatedEmployee = { id, name, email, department };
     axios.put(`https://employeejava-production.up.railway.app/api/employees/${id}`, updatedEmployee).then((response) => {
-      // Handle success, you might want to display a message or redirect to the employee list
+      
       onUpdateSuccess();
     });
   };
